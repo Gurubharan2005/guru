@@ -1,0 +1,284 @@
+// You are using GCC
+#include <iostream>
+using namespace std;
+class hellboy
+{
+   virtual void print()=0;
+};
+class hell:public hellboy
+{
+    public:
+    int y;
+    int base(int x)
+    {
+        return x*x*x;
+    }
+    int boss(int x)
+    {
+        return x*x;
+    }
+    void print()
+    {
+        cout<<y;
+    }
+};
+
+int main()
+{
+    int x;
+    cin>>x;
+    hell s;
+    
+    if(x%2==0)
+    {
+        s.y= s.base( x)+s.boss(x);
+        s.print();
+    }
+    else 
+    {
+        s.y=s.base(x)-s.boss(x);
+        s.print();
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+class itemtype
+{
+    public:
+  virtual void cal()=0;
+  
+};
+class wooden : public itemtype
+{
+    public:
+    double no,cost;
+    void cal()
+    {
+        printf("%.2f",no*cost);
+    }
+};
+class electronics:public itemtype
+{
+    public:
+    double cost;
+    void cal()
+    {
+        printf("%.2f",(cost/100)*80);
+    }
+};
+int main()
+{
+    int n;
+    double x,y;
+    cin>>n;
+    if(n==1)
+    {
+    wooden s;
+        cin>>s.no>>s.cost;
+        s.cal();
+    }
+    if(n==2)
+    {
+    electronics e;
+        cin>>e.cost;
+        e.cal();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// You are using GCC
+#include <iostream>
+using namespace std;
+class hell
+{
+    public:
+    virtual void game()=0;
+    
+};
+class child
+{
+    public:
+    char a[4];
+     int x=0;
+     int y=0;
+    void game()
+    {
+        for(int i=0;i<4;i++)
+        {
+            if(a[i]>=65&&a[i]<=90)
+            {
+                x=x+10;
+            }
+            else if(a[i]>=97&&a[i]<=122)
+            {
+                y=y-5;
+            }
+        }
+        cout<<"Score : "<<x+y;
+    }
+};
+int main()
+{
+    char a[4];
+    int i;
+    child s;
+    for(i=0;i<4;i++)
+    {
+        cin>>s.a[i];
+    }
+    s.game();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// You are using GCC
+#include <iostream>
+using namespace std;
+class base
+{
+    public:
+    virtual double amount()=0;
+};
+class fan:public base
+{
+    public:
+    int as,bs;            
+        double x;
+     double amount()
+    {
+        x=((as*bs*1.5)/1000);
+        return x;
+    }
+    
+};
+class light:public base
+{
+    public:
+    int a1s,b1s;
+        double x;
+    double amount()
+    {
+        x=((a1s*b1s*1.5)/1000);
+        return x;
+    }
+};
+class tv:public base
+{
+    public:
+    int a2s,b2s;
+    double x;
+    double amount()
+    {
+        x=((a2s*b2s*1.5)/1000);
+        return x;
+    }
+};
+int main()
+{
+    int a,b;
+    int a1,b1;
+    int a2,b2;
+    fan s;
+    light s1;
+    tv s2;
+    cin>>s.as>>s.bs>>s1.a1s>>s1.b1s>>s2.a2s>>s2.b2s;
+    s.amount();
+    s1.amount();
+    s2.amount();
+    cout<<s.x+s1.x+s2.x;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// You are using GCC
+#include <iostream>
+using namespace std;
+class base
+{
+    public:
+    virtual void add()=0;
+    virtual void sub()=0;
+    virtual void mul()=0;
+    virtual void dive()=0;
+};
+class derived:public base
+{
+    public:
+    int x,y;
+    void add()
+    {
+        cout<<x+y<<" ";
+    }
+    void sub()
+    {
+        cout<<x-y<<" ";
+    }
+    void mul()
+    {
+        cout<<x*y<<" ";
+    }
+    void dive()
+    {
+        cout<<x/y<<" ";
+    }
+
+    
+};
+int main()
+{
+    int a,b;
+    derived s;
+    cin>>s.x;
+    cin>>s.y;
+    s.add();
+    s.sub();
+    s.mul();
+    s.dive();
+    
+}
